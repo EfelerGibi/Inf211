@@ -1,6 +1,5 @@
-my_name = "Efe Bayrakceken"
-my_id = "210102002026"
-my_email = "e.bayrakceken2021@gtu.edu.tr"
+#everything in this is stupid but our teacher wanted this.
+
 
 from random import randint
 from random import shuffle
