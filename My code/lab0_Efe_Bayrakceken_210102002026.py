@@ -1,6 +1,3 @@
-my_name = "Efe Bayrakceken"
-my_id = "210102002026"
-my_email = "e.bayrakceken2021@gtu.edu.tr"
 
 def problem1(): #returns my name
     return "Hi all, This is Efe Bayrakceken"
