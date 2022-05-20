@@ -1,6 +1,4 @@
-my_name = "Efe Bayrakceken"
-my_id = "210102002026"
-my_email = "e.bayrakceken2021@gtu.edu.tr"
+
 
 from random import randint
 
