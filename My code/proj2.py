@@ -1,6 +1,4 @@
-my_name = "Efe Bayrakceken"
-my_id = "210102002026"
-my_email = "e.bayrakceken2021@gtu.edu.tr"
+
 
 import random
 
@@ -184,7 +182,7 @@ def scale_up(img, N):
             large_board.append(large_board[-1])
     return large_board
 
-def apply_window(img, window):
+def apply_window(img, window): #this might be the best code that i have ever written
     img_copy=[]
     out=[]
     x, y= 1, 1
