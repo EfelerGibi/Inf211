@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+    <title>Render Image</title>
+</head>
+<body>
+<main style="min-height:600px">
+    <h1>Render Image</h1>
+    <h3>Choose the <i>txt</i> file that you want to render</h3>
+    <p>Note that each pixel is repeated 5 times to show the image better</p>
+    <input type="file">
+    <button id="render">Render Image</button>
+    <br />
+    <br />
+    <canvas id="canvas" style="border:1px solid #E8E8E8;"></canvas>
+
+    <script>
+    document.getElementById("render").addEventListener("click", function() {
+        var reader = new FileReader();
+            reader.addEventListener('load', function() {
+                draw(this.result);
+            });
+        reader.readAsText(document.querySelector('input').files[0]);
+    });
+
+    function draw(file) {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        var x = 0;
+        var y = 0;
+        var r = 0;
+        var g = 0;
+        var b = 0;
+        var lines = file.split('\n');
+        var lenx = lines[0].split(',').length -1;
+        var leny = lines.length -1;
+        console.log(lenx, leny);
+
+        canvas.width = lenx*5;
+        canvas.height = leny*5;
+
+        for (let y = 0; y < leny; y++) {
+            line = lines[y].split(',');
+            for (let x = 0; x < lenx; x++) {
+                r = parseInt(line[x].slice(0, 2), 16);
+                g = parseInt(line[x].slice(2, 4), 16);
+                b = parseInt(line[x].slice(4, 6), 16);
+                console.log(r, g, b);
+                ctx.fillStyle = "rgb("+r+","+g+","+b+")";
+                ctx.fillRect(x*5, y*5, 5, 5);
+            }
+        }
+      }
+    }
+
+    </script>
+</main>
+<footer style="font-size:small">
+    Furkan Çaycı, 2021
+</footer>
+</body>
+</html>
